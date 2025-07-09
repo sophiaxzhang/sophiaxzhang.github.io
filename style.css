@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eef9db;
+}
+
+.banner-section {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.banner-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+    
+
+.name {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 7rem;
+    font-family: "Cherry Bomb One", cursive;
+    color: white;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    z-index: 2; /* 👈 Make sure it appears above image */
+    font-family: "Cherry Bomb One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* 🔗 Navigation bar */
+.nav-bar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 3; /* 👈 Appear above name and image */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin-right: 40px;
+}
+
+.nav-links li a {   
+    color: #f18899; /* or white with shadow if you prefer */
+    background: rgba(255, 255, 255, 0.8); /* translucent white */
+    padding: 6px 12px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 2rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    background: #f2a0b2;
+    color: white;
+}
+
+.nav-links li a.active {
+    background: #f18899;
+    color: white;
+}
+
