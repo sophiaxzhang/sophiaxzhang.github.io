@@ -3,24 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/projects.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <title>Sophia Zhang</title>
 </head>
 <body>
-    <div class = "banner-section">
-         <nav class="nav-bar">
-            <ul class="nav-links">
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
+    <nav class="nav-bar">
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-        <img src="matchabanner.png" alt="pink matcha image" class="banner-image">
+    <!-- Intro Section -->
+    <section id="home">
+        <canvas id="bubbly-canvas"></canvas>
+        <div class="content">
+            <div class="home-text-block">
+                <div class="home-text">
+                    Hi, <br/> I'm Sophia!
+                </div>
+                <div class="socials">
+                    <ul class="social-icons">
+                        <li><a class="linkedin" aria-label="LinkedIn" href="https://www.linkedin.com/in/sophxz" target="_blank"><i class="fab fa-linkedin"></i></a></li> 
+                        <li><a class="github" aria-label="GitHub" href="https://github.com/sophiaxzhang" target="_blank"><i class="fab fa-github"></i></a></li>
+                        <li><a class="email" aria-label="Email" href="mailto:sophxz@uw.edu" target="_blank"><i class="fas fa-envelope"></i></a></li>
+                    </ul>
+                </div>
+                <a href="#about" class="btn">
+                    <span>About Me</span>
+                    <i class="fas fa-arrow-circle-down"></i>
+                </a>
+            </div>
+            <div class="image">
+                <img draggable="false" class="tilt" src="./assets/sophia.jpg" alt="">
+            </div>
+        </div>
+    </section>
 
-        <div class="name">Sophia Zhang</div>
-    </div>
+    <!-- Projects Section -->
+    <section id="about">
+        <div class="content">  <!-- Add this wrapper -->
+            <div class="section-name">About Me</div>  <!-- Use div instead of h2 -->
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="content">  <!-- Add this wrapper -->
+            <div class="section-name">Projects</div>  <!-- Use div instead of h2 -->
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="content">  <!-- Add this wrapper -->
+            <div class="section-name">Skills</div>  <!-- Use div instead of h2 -->
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="content">  <!-- Add this wrapper -->
+            <div class="section-name">Contact</div>  <!-- Use div instead of h2 -->
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bubbly-bg@1.0.0/dist/bubbly-bg.js"></script>
+    <script>
+        const canvas = document.getElementById("bubbly-canvas");
+
+        function resizeCanvas() {
+        const section = document.getElementById("home");
+        canvas.width = section.clientWidth;
+        canvas.height = section.clientHeight;
+        }
+
+        window.addEventListener("resize", resizeCanvas);
+        resizeCanvas();
+
+        bubbly({
+        canvas: canvas,
+        colorStart: "#fff4e6",
+        colorStop: "#ffe9e4",
+        blur: 1,
+        compose: "source-over",
+        bubbleFunc: () => `hsla(${Math.random() * 50}, 100%, 50%, .15)`
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+    <script>
+    VanillaTilt.init(document.querySelector(".tilt"), {
+        max: 15,
+        speed: 400,
+        scale: 1.05,
+        glare: true,
+        "max-glare": 0.3,
+        gyroscope: true
+    });
+    </script>
+    <script src="scripts/scrollScript.js"></script>
 </body>
 </html>
