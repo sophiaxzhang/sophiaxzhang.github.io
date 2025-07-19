@@ -1,10 +1,10 @@
 const sections = document.querySelectorAll("section[id]");
 const navLinks = document.querySelectorAll(".nav-links a");
 
-// flag to prevent observer interference when progrma is scrolling
+//flag to prevent observer interference when progrma is scrolling
 let isScrollingProgrammatically = false;
 
-// click handler
+//click handler
 navLinks.forEach(link => {
     link.addEventListener("click", () => {
         navLinks.forEach(l => l.classList.remove("active"));
@@ -20,9 +20,9 @@ navLinks.forEach(link => {
 
 //scroll handler
 const observerOptions = {
-    // trigger when 80% of section visible
+    //triggers when 80% of section visible
     threshold: 0.8,
-    // offset for your fixed header (62px)
+    //offset for header
     rootMargin: '-62px 0px -62px 0px'
 };
 

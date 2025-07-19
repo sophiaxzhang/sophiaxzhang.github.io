@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <title>Sophia Zhang</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
 </head>
 <body>
     <nav class="nav-bar">
@@ -19,18 +20,15 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
-    <!-- Intro Section -->
     <section id="home">
         <canvas id="bubbly-canvas"></canvas>
         <div class="content">
             <div class="home-text-block">
                 <div class="home-text">
-                    Hi, <br/> I'm Sophia!
+                    Hello, <br/> I'm Sophia
                 </div>
                 <div class="socials">
                     <ul class="social-icons">
@@ -39,7 +37,7 @@
                         <li><a class="email" aria-label="Email" href="mailto:sophxz@uw.edu" target="_blank"><i class="fas fa-envelope"></i></a></li>
                     </ul>
                 </div>
-                <a href="#about" class="btn">
+                <a href="#about" class="about-button">
                     <span>About Me</span>
                     <i class="fas fa-arrow-circle-down"></i>
                 </a>
@@ -50,31 +48,69 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section id="about">
-        <div class="content">  <!-- Add this wrapper -->
-            <div class="section-name">About Me</div>  <!-- Use div instead of h2 -->
+        <div class="section-content">
+            <div class="section-name">About Me</div>
+            <div class="about-block">
+                <div class="about-text-block">
+                    <div class="about-text">
+                            I'm a second year student at the University of Washington majoring in computer science with a minor in business.
+                            Outside of school, I build fun projects, from a badminton coaching app to 
+                            a webapp connecting developers using a dating app-like UI.
+                            I'm most interested in software engineering roles where I can work on products that people actually want to use (and use daily).
+                            In my free time, I love painting, playing badminton at the UW IMA, or going snowboarding with friends.
+                    </div>
+                </div>
+                <div class="about-image-container">
+                    <button class="resume-button" onclick="window.open('https://docs.google.com/document/d/1c0cBu9NXqsJYaHbKwCBftgxy-QEFxu65kHoSvWBZVOU/edit?tab=t.0', '_blank')">Resume</button>
+                    <div class="image">
+                        <div class="card" onclick="this.classList.toggle('flipped')">
+                            <div class="card-inner">
+                            <div class="card-front">
+                                <img draggable="false" class="tilt" src="./assets/snow.jpg" alt="">
+                            </div>
+                            <div class="card-back">
+                                <p>Snowboarding at Crystal Mountain in spring!</p>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="image">
+                        <p class="caption">My favorite bagel from Orin's Place</p>
+                        <div class="card" onclick="this.classList.toggle('flipped')">
+                            <div class="card-inner">
+                            <div class="card-front">
+                                <img draggable="false" src="./assets/bagel_painting.jpeg" alt="1">
+                            </div>
+                            <div class="card-back">
+                                <img draggable="false" src="./assets/bagel.jpeg" alt="">
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section id="projects">
-        <div class="content">  <!-- Add this wrapper -->
-            <div class="section-name">Projects</div>  <!-- Use div instead of h2 -->
+        <div class="section-content">
+            <div class="section-name">Projects</div>
         </div>
     </section>
 
-    <section id="skills">
-        <div class="content">  <!-- Add this wrapper -->
-            <div class="section-name">Skills</div>  <!-- Use div instead of h2 -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>✉️ <a href="mailto:sophxz@uw.edu">sophxz@uw.edu</a></p>
+            <p>💼 <a href="https://linkedin.com/in/sophxz" target="_blank">LinkedIn</a> | 
+            🐙 <a href="https://github.com/sophiaxzhang" target="_blank">GitHub</a>
+            </p>
+            <p>Made with <span class="beating-heart">🩷</span> by Sophia Zhang</p>
         </div>
-    </section>
+    </footer>
 
-    <section id="contact">
-        <div class="content">  <!-- Add this wrapper -->
-            <div class="section-name">Contact</div>  <!-- Use div instead of h2 -->
-        </div>
-    </section>
+
     <script src="https://cdn.jsdelivr.net/npm/bubbly-bg@1.0.0/dist/bubbly-bg.js"></script>
     <script>
         const canvas = document.getElementById("bubbly-canvas");
