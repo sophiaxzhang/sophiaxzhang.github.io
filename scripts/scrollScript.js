@@ -9,44 +9,32 @@ navLinks.forEach(link => {
     link.addEventListener("click", () => {
         navLinks.forEach(l => l.classList.remove("active"));
         link.classList.add("active");
-        
+
         isScrollingProgrammatically = true;
-        
         setTimeout(() => {
             isScrollingProgrammatically = false;
         }, 1000);
     });
 });
 
-//scroll handler
-const observerOptions = {
-    //triggers when 80% of section visible
-    threshold: 0.8,
-    //offset for header
-    rootMargin: '-62px 0px -62px 0px'
-};
+//scroll handler that highlights the section taking up most of the screen
+window.addEventListener("scroll", () => {
+    if (isScrollingProgrammatically) return;
 
-const observer = new IntersectionObserver((entries) => {
-    if (isScrollingProgrammatically) {
-        return;
-    }
-    
-    entries.forEach(entry => {
-        const sectionId = entry.target.getAttribute('id');
-        const navLink = document.querySelector(`.nav-links a[href="#${sectionId}"]`);
-        
-        if (entry.isIntersecting) {
-            navLinks.forEach(link => {
-                link.classList.remove("active");
-            });
-            
-            if (navLink) {
-                navLink.classList.add("active");
-            }
+    let maxVisibleHeight = 0;
+    let currentSectionId = '';
+
+    sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        const visibleHeight = Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0);
+
+        if (visibleHeight > maxVisibleHeight) {
+            maxVisibleHeight = visibleHeight;
+            currentSectionId = section.id;
         }
     });
-}, observerOptions);
 
-sections.forEach(section => {
-    observer.observe(section);
+    navLinks.forEach(link => link.classList.remove("active"));
+    const activeLink = document.querySelector(`.nav-links a[href="#${currentSectionId}"]`);
+    if (activeLink) activeLink.classList.add("active");
 });
