@@ -101,7 +101,7 @@
                 <div class="project-block">
                     <div class="visuals-container">
                         <figure class="video-figure">
-                            <video class="swing-video" controls>
+                            <video class="swing-video" controls  preload="none" poster="./assets/thumbnail.png">
                                 <source src="./assets/swing_overlay_output.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
@@ -126,12 +126,17 @@
                 <div class="project-block">
                     <div class="visuals-container">
                         <div class="devsync-photo">
-                            <img src="./assets/devsync_image.png" alt="devsync photo">
+                            <img src="./assets/devsync_image.png" alt="devsync photo" loading="lazy">
                         </div>
                     </div>
                     <div class="project-description">
                         <h3>Devsync</h3>
-                        <p>Description.</p>
+                        <p>Devsync allows developers and project seekers to find projects to work on and teams to work with. 
+                            It's difficult to form teams with balanced team skillsets and same project interests, and DevSync aims to alleviate those issues.
+                            Devsync has a streamlined swiping interface and restricts users to those with UW emails so students can connect locally.
+
+                            Tech Stack: MySQL, Docker, TypeScript, React
+                        </p>
                     </div>
                 </div>
             </div>
